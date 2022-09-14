@@ -1,3 +1,5 @@
+package org.example;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -16,6 +18,40 @@ class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 
+    @Test
+    public void test10Station() {
+        Radio radio = new Radio();
+        radio.setCurrentStation(10);
+
+
+        int expected = 0;
+        int actual = radio.getCurrentStation();
+
+        Assertions.assertEquals(expected, actual);
+    }
+    @Test
+    public void test01Station() {
+        Radio radio = new Radio();
+        radio.setCurrentStation(-1);
+
+
+        int expected = 0;
+        int actual = radio.getCurrentStation();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void test9Station() {
+        Radio radio = new Radio();
+        radio.setCurrentStation(9);
+
+
+        int expected = 9;
+        int actual = radio.getCurrentStation();
+
+        Assertions.assertEquals(expected, actual);
+    }
     @Test
     public void testPrevStation() {
         Radio radio = new Radio();
@@ -161,6 +197,40 @@ class RadioTest {
         radio.upVolume();
 
         int expected = 2;
+        int actual = radio.getCurrentVolume();
+
+        Assertions.assertEquals(expected, actual);
+    }
+    @Test
+    public void testVolume1() {
+        Radio radio = new Radio();
+        radio.setCurrentVolume(1);
+
+
+        int expected = 1;
+        int actual = radio.getCurrentVolume();
+
+        Assertions.assertEquals(expected, actual);
+    }
+    @Test
+    public void testVolume11() {
+        Radio radio = new Radio();
+        radio.setCurrentVolume(11);
+
+
+        int expected = 0;
+        int actual = radio.getCurrentVolume();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testVolume01() {
+        Radio radio = new Radio();
+        radio.setCurrentVolume(-1);
+
+
+        int expected = 0;
         int actual = radio.getCurrentVolume();
 
         Assertions.assertEquals(expected, actual);
